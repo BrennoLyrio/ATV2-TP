@@ -4,6 +4,7 @@ type Cliente = {
     nome: string;
     nomeSocial?: string; // Campo opcional
     cpf: string;
+    rg: string;
     email: string;
     telefone: string;
 };
@@ -22,9 +23,9 @@ export default class ListaClientes extends Component<props, state> {
         super(props);
         this.state = {
             clientes: [
-                { nome: "João Silva", nomeSocial: "Joãozinho", cpf: "123.456.789-00", email: "joao@gmail.com", telefone: "(11) 98765-4321" },
-                { nome: "Maria Santos", cpf: "987.654.321-00", email: "maria@hotmail.com", telefone: "(21) 91234-5678" },
-                { nome: "Carlos Souza", nomeSocial: "Carlão", cpf: "456.123.789-00", email: "carlos@yahoo.com", telefone: "(31) 99876-5432" },
+                { nome: "João Silva", nomeSocial: "Joãozinho", cpf: "123.456.789-00",rg: "25.678.123-4", email: "joao@gmail.com", telefone: "(11) 98765-4321" },
+                { nome: "Maria Santos", cpf: "987.654.321-00", rg: "25.678.321-9", email: "maria@hotmail.com", telefone: "(21) 91234-5678" },
+                { nome: "Carlos Souza", nomeSocial: "Carlão", cpf: "456.123.789-00", rg: "25.678.354-8", email: "carlos@yahoo.com", telefone: "(31) 99876-5432" },
             ],
             clienteSelecionado: null,
         };
@@ -117,6 +118,9 @@ export default class ListaClientes extends Component<props, state> {
                                     )}
                                     <p>
                                         <strong>CPF:</strong> {cliente.cpf}
+                                    </p>
+                                    <p>
+                                        <strong>RG:</strong> {cliente.rg}
                                     </p>
                                     <p>
                                         <strong>E-mail:</strong> {cliente.email}
